@@ -4,11 +4,14 @@ import { addRxPlugin } from 'rxdb';
 import { RxDBDevModePlugin } from 'rxdb/plugins/dev-mode';
 import {getRxStorageMemory} from "rxdb/plugins/storage-memory";
 import * as bodyParser from "express";
+import cors from 'cors';
+
 addRxPlugin(RxDBDevModePlugin);
 
 
 const app = express();
 const PORT = 3000;
+app.use(cors());
 
 const schema = {
   version: 0,
